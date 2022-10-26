@@ -72,6 +72,9 @@ module.exports = sequelize => {
     AppointmentsModel.hasMany(models.doctors_model, {
       foreignKey: 'id_doctor'
     });
+    /*AppointmentsModel.hasMany(models.patients_model, {
+      foreignKey: 'id_patient'
+    });*/
   };
 
   return AppointmentsModel;

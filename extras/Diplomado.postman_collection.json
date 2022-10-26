@@ -34,6 +34,48 @@
 							"response": []
 						},
 						{
+							"name": "List_Illnesses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/illiness/list/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"illiness",
+										"list",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List_Specializations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/specialization/list/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"specialization",
+										"list",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "List_Doctors",
 							"request": {
 								"method": "GET",
