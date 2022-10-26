@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const specializationController = require('../controllers').specializationController;
+const specializationsController = require('../controllers').specializationsController;
 
-router.get('/list', specializationController.list);
+router.get('/list', specializationsController.list);
 
 module.exports = router;

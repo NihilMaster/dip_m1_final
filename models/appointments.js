@@ -10,11 +10,7 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: true,
       field: "id_appointment",
-      autoIncrement: true,
-      references: {
-        key: "id_patient",
-        model: "patients_model"
-      }
+      autoIncrement: true
     },
     doctor: {
       type: DataTypes.BIGINT,
@@ -36,7 +32,11 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: false,
       field: "patient",
-      autoIncrement: false
+      autoIncrement: false,
+      references: {
+        key: "id_patient",
+        model: "patients_model"
+      }
     },
     date_appointment: {
       type: DataTypes.DATE,
@@ -69,10 +69,12 @@ module.exports = sequelize => {
 
   const AppointmentsModel = sequelize.define("appointments_model", attributes, options);
   AppointmentsModel.associate = function (models) {
-    AppointmentsModel.belongsTo(models.doctors_model, {
-      foreignKey: 'doctor'
-      });
-     
+    AppointmentsModel.hasMany(models.doctors_model, {
+      foreignKey: 'id_doctor'
+    });
+    /*AppointmentsModel.belongsTo(models.patients_model, {
+      foreignKey: 'id_patient'
+    }); */
   };
 
   return AppointmentsModel;
