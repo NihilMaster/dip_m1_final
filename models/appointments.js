@@ -10,7 +10,11 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: true,
       field: "id_appointment",
-      autoIncrement: true
+      autoIncrement: true,
+      references: {
+        key: "id_patient",
+        model: "patients_model"
+      }
     },
     doctor: {
       type: DataTypes.BIGINT,
@@ -19,7 +23,11 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: false,
       field: "doctor",
-      autoIncrement: false
+      autoIncrement: false,
+      references: {
+        key: "id_doctor",
+        model: "doctors_model"
+      }
     },
     patient: {
       type: DataTypes.BIGINT,

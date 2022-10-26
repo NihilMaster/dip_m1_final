@@ -22,13 +22,17 @@ module.exports = sequelize => {
       autoIncrement: false
     },
     illness: {
-      type: DataTypes.TEXT,
+      type: DataTypes.INTEGER,
       allowNull: true,
       defaultValue: null,
       comment: null,
       primaryKey: false,
       field: "illness",
-      autoIncrement: false
+      autoIncrement: false,
+      references: {
+        key: "id_illness",
+        model: "illness_model"
+      }
     },
     state: {
       type: DataTypes.BOOLEAN,
@@ -37,6 +41,24 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: false,
       field: "state",
+      autoIncrement: false
+    },
+    biological_sex: {
+      type: DataTypes.CHAR,
+      allowNull: true,
+      defaultValue: null,
+      comment: "M/F",
+      primaryKey: false,
+      field: "biological_sex",
+      autoIncrement: false
+    },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: null,
+      comment: null,
+      primaryKey: false,
+      field: "age",
       autoIncrement: false
     }
   };
