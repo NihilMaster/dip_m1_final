@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "a0ae173d-5631-411b-b03c-07e13ee4de60",
+		"name": "Diplomado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22734484"
+	},
+	"item": [
+		{
+			"name": "M1 - Final",
+			"item": [
+				{
+					"name": "List",
+					"item": [
+						{
+							"name": "List_Appointments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/appointment/list/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"appointment",
+										"list",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List_Doctors",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/doctor/list/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"doctor",
+										"list",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List_Patients",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/patient/list/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"patient",
+										"list",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ListID_Appointments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/appointment/list/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"appointment",
+										"list",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ListID_Doctors",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/doctor/list/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"doctor",
+										"list",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ListID_Patients",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/patient/list/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"patient",
+										"list",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add",
+					"item": [
+						{
+							"name": "Add_Appointment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"doctor\": \"1\",\r\n    \"patient\": \"1\",\r\n    \"date_appointment\": \"2022-10-25T05:35:50.390Z\",\r\n    \"state\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/appointment/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"appointment",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add_Doctor",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name_doctor\": \"Juan\",\r\n    \"specialization\": \"Oftalmólogo\",\r\n    \"state\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/doctor/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"doctor",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add_Patient",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_patient\": 1,\r\n    \"name_patient\": \"Pedro\",\r\n    \"illness\": \"Ceguera\",\r\n    \"state\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/patient/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"patient",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Edit",
+					"item": [
+						{
+							"name": "Edit_Appointment",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"doctor\": \"2\",\r\n    \"patient\": \"2\",\r\n    \"date_appointment\": \"2022-10-25T05:35:50.390Z\",\r\n    \"state\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/appointment/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"appointment",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit_Doctor",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name_doctor\": \"Ángel\",\r\n    \"specialization\": \"Oftalmólogo\",\r\n    \"state\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/doctor/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"doctor",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit_Patient",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name_patient\": \"Jose\",\r\n    \"illness\": \"Ceguera\",\r\n    \"state\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/patient/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"patient",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add Copy",
+					"item": [
+						{
+							"name": "Supr_Appointment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"doctor\": \"1\",\r\n    \"patient\": \"1\",\r\n    \"date_appointment\": \"2022-10-25T05:35:50.390Z\",\r\n    \"state\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/appointment/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"appointment",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Supr_Doctor",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name_doctor\": \"Juan\",\r\n    \"specialization\": \"Oftalmólogo\",\r\n    \"state\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/doctor/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"doctor",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Supr_Patient",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_patient\": 1,\r\n    \"name_patient\": \"Pedro\",\r\n    \"illness\": \"Ceguera\",\r\n    \"state\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/patient/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"patient",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
