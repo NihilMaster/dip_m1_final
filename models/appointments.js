@@ -72,9 +72,9 @@ module.exports = sequelize => {
     AppointmentsModel.hasMany(models.doctors_model, {
       foreignKey: 'id_doctor'
     });
-    /*AppointmentsModel.belongsTo(models.patients_model, {
+    AppointmentsModel.belongsTo(models.patients_model, {
       foreignKey: 'id_patient'
-    }); */
+    });
   };
 
   return AppointmentsModel;
