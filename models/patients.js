@@ -31,7 +31,7 @@ module.exports = sequelize => {
       autoIncrement: false,
       references: {
         key: "id_illness",
-        model: "illness_model"
+        model: "illnesses_model"
       }
     },
     state: {
@@ -52,13 +52,22 @@ module.exports = sequelize => {
       field: "biological_sex",
       autoIncrement: false
     },
-    age: {
+    birthday: {
       type: DataTypes.INTEGER,
       allowNull: true,
       defaultValue: null,
       comment: null,
       primaryKey: false,
-      field: "age",
+      field: "birthday",
+      autoIncrement: false
+    },
+    identification: {
+      type: DataTypes.CHAR,
+      allowNull: false,
+      defaultValue: null,
+      comment: null,
+      primaryKey: false,
+      field: "identification",
       autoIncrement: false
     }
   };

@@ -1,4 +1,4 @@
-const illness = require('../models').illness_model;
+const illness = require('../models').illnesses_model;
 module.exports = {
     list(req, res) {
         return illness
@@ -7,5 +7,5 @@ module.exports = {
         .catch((error) => {
             res.status(400).send(error);
         });
-    }
-}
+    },  
+};

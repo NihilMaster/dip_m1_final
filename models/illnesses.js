@@ -23,13 +23,13 @@ module.exports = sequelize => {
     }
   };
   const options = {
-    tableName: "illness",
+    tableName: "illnesses",
     comment: "",
     indexes: [],
     timestamps: false,
     underscored: true,
     freezeTableName: true
   };
-  const IllnessModel = sequelize.define("illness_model", attributes, options);
-  return IllnessModel;
+  const IllnessesModel = sequelize.define("illnesses_model", attributes, options);
+  return IllnessesModel;
 };
