@@ -65,6 +65,15 @@ module.exports = sequelize => {
     underscored: true,
     freezeTableName: true
   };
+  //const AppointmentsModel = sequelize.define("appointments_model", attributes, options);
+
   const AppointmentsModel = sequelize.define("appointments_model", attributes, options);
+  AppointmentsModel.associate = function (models) {
+    AppointmentsModel.belongsTo(models.doctors_model, {
+      foreignKey: 'doctor'
+      });
+     
+  };
+
   return AppointmentsModel;
 };
