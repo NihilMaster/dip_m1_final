@@ -53,7 +53,7 @@ module.exports = sequelize => {
       autoIncrement: false
     },
     birthday: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DATEONLY,
       allowNull: true,
       defaultValue: null,
       comment: null,
@@ -62,7 +62,7 @@ module.exports = sequelize => {
       autoIncrement: false
     },
     identification: {
-      type: DataTypes.CHAR,
+      type: DataTypes.CHAR(30),
       allowNull: false,
       defaultValue: null,
       comment: null,

@@ -28,7 +28,10 @@ module.exports = {
         .create({
             name_patient: req.body.name_patient,
             illness: req.body.illness,
-            state: req.body.state
+            state: req.body.state,
+            biological_sex: req.body.biological_sex,
+            birthday: req.body.birthday,
+            identification: req.body.identification
         })
         .then((patient) => res.status(201).send(patient))
         .catch((error) => res.status(400).send(error));
@@ -46,7 +49,10 @@ module.exports = {
             .update({
                 name_patient: req.body.name_patient || patient.name_patient,
                 illness: req.body.illness || patient.illness,
-                state: req.body.state || patient.state
+                state: req.body.state || patient.state,
+                biological_sex: req.body.biological_sex || patient.biological_sex,
+                birthday: req.body.birthday,
+                identification: req.body.identification
             })
             .then(() => res.status(200).send(patient))
             .catch((error) => res.status(400).send(error));
