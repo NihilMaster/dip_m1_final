@@ -13,6 +13,116 @@
 					"name": "List",
 					"item": [
 						{
+							"name": "ID",
+							"item": [
+								{
+									"name": "ListID_Appointments",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/appointment/list/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"appointment",
+												"list",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ListID_Doctors",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/doctor/list/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"doctor",
+												"list",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ListID_Patients",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/patient/list/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"patient",
+												"list",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ListID_Illnesses",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/illness/list/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"illness",
+												"list",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ListID_Specializations",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/specialization/list/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"specialization",
+												"list",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
 							"name": "List_Appointments",
 							"request": {
 								"method": "GET",
@@ -39,14 +149,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/illiness/list/",
+									"raw": "http://localhost:3000/illness/list/",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
 									"path": [
-										"illiness",
+										"illness",
 										"list",
 										""
 									]
@@ -116,69 +226,6 @@
 								}
 							},
 							"response": []
-						},
-						{
-							"name": "ListID_Appointments",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/appointment/list/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"appointment",
-										"list",
-										"1"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "ListID_Doctors",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/doctor/list/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"doctor",
-										"list",
-										"1"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "ListID_Patients",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/patient/list/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"patient",
-										"list",
-										"1"
-									]
-								}
-							},
-							"response": []
 						}
 					]
 				},
@@ -221,7 +268,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name_doctor\": \"Juan\",\r\n    \"specialization\": \"Oftalmólogo\",\r\n    \"state\": true\r\n}",
+									"raw": "{\r\n    \"name_doctor\": \"Juan\",\r\n    \"specialization\": \"1\",\r\n    \"state\": true\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -266,6 +313,64 @@
 									"port": "3000",
 									"path": [
 										"patient",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add_Illness",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name_illness\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/illness/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"illness",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add_Specialization",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name_specialization\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/specialization/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"specialization",
 										""
 									]
 								}

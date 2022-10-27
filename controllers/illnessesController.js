@@ -8,6 +8,21 @@ module.exports = {
             res.status(400).send(error);
         });
     },
+    getById(req, res) {
+        console.log(req.params.id);
+        return illness
+        .findByPk(req.params.id)
+        .then((illness) => {
+            console.log(illness);
+            if (!illness) {
+                return res.status(404).send({
+                message: 'Illness Not Found',
+                });
+            }
+            return res.status(200).send(illness);
+        })
+        .catch((error) => res.status(400).send(error));
+    },
     add(req, res) {
         return illness
         .create({

@@ -5,7 +5,7 @@
 -- Dumped from database version 10.4 (Ubuntu 10.4-0ubuntu0.18.04)
 -- Dumped by pg_dump version 14.5
 
--- Started on 2022-10-26 01:07:03
+-- Started on 2022-10-27 02:01:47
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -169,8 +169,8 @@ CREATE TABLE public.patients (
     illness integer,
     state boolean DEFAULT false,
     biological_sex character varying,
-    birthday integer,
-    identification character varying NOT NULL
+    birthday date,
+    identification character varying(30) NOT NULL
 );
 
 
@@ -294,7 +294,6 @@ ALTER TABLE ONLY public.specializations ALTER COLUMN id_specialization SET DEFAU
 -- Data for Name: appointments; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.appointments VALUES (5, 5, 5, '2022-10-25 21:14:17.454748', true);
 
 
 --
@@ -304,6 +303,8 @@ INSERT INTO public.appointments VALUES (5, 5, 5, '2022-10-25 21:14:17.454748', t
 --
 
 INSERT INTO public.doctors VALUES (5, 'CarlosG', 1, true);
+INSERT INTO public.doctors VALUES (7, 'asd', 1, true);
+INSERT INTO public.doctors VALUES (6, 'Juan', 3, true);
 
 
 --
@@ -313,6 +314,7 @@ INSERT INTO public.doctors VALUES (5, 'CarlosG', 1, true);
 --
 
 INSERT INTO public.illnesses VALUES (1, 'Ceguera');
+INSERT INTO public.illnesses VALUES (2, 'Tuberculosis');
 
 
 --
@@ -321,7 +323,11 @@ INSERT INTO public.illnesses VALUES (1, 'Ceguera');
 -- Data for Name: patients; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.patients VALUES (5, 'Mateo', 1, true, 'M', 32, '123234534523');
+INSERT INTO public.patients VALUES (8, 'Mateo', 1, true, 'M', NULL, '237498743');
+INSERT INTO public.patients VALUES (9, 'Juan Garcés', 1, true, 'M', NULL, '123456');
+INSERT INTO public.patients VALUES (10, 'Mateo3', 1, true, 'M', NULL, '237498743');
+INSERT INTO public.patients VALUES (26, 'Carlos23', 1, true, '', '1900-01-01', '123');
+INSERT INTO public.patients VALUES (27, 'asdas', 2, true, '', '1900-01-01', '123');
 
 
 --
@@ -331,6 +337,11 @@ INSERT INTO public.patients VALUES (5, 'Mateo', 1, true, 'M', 32, '123234534523'
 --
 
 INSERT INTO public.specializations VALUES (1, 'Oftalmología');
+INSERT INTO public.specializations VALUES (2, 'Traumatología');
+INSERT INTO public.specializations VALUES (3, 'Cardiología');
+INSERT INTO public.specializations VALUES (4, 'Pediatría');
+INSERT INTO public.specializations VALUES (5, 'Ginecología');
+INSERT INTO public.specializations VALUES (6, 'Fonoudiología');
 
 
 --
@@ -348,7 +359,7 @@ SELECT pg_catalog.setval('public.appointments_id_appointment_seq', 5, true);
 -- Name: doctors_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.doctors_id_seq', 5, true);
+SELECT pg_catalog.setval('public.doctors_id_seq', 7, true);
 
 
 --
@@ -357,7 +368,7 @@ SELECT pg_catalog.setval('public.doctors_id_seq', 5, true);
 -- Name: illness_id_illness_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.illness_id_illness_seq', 1, true);
+SELECT pg_catalog.setval('public.illness_id_illness_seq', 2, true);
 
 
 --
@@ -366,7 +377,7 @@ SELECT pg_catalog.setval('public.illness_id_illness_seq', 1, true);
 -- Name: patient_id_patient_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.patient_id_patient_seq', 7, true);
+SELECT pg_catalog.setval('public.patient_id_patient_seq', 27, true);
 
 
 --
@@ -375,7 +386,7 @@ SELECT pg_catalog.setval('public.patient_id_patient_seq', 7, true);
 -- Name: specializations_id_specialization_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.specializations_id_specialization_seq', 1, true);
+SELECT pg_catalog.setval('public.specializations_id_specialization_seq', 6, true);
 
 
 --
@@ -459,7 +470,7 @@ ALTER TABLE ONLY public.patients
     ADD CONSTRAINT patients_fk FOREIGN KEY (illness) REFERENCES public.illnesses(id_illness);
 
 
--- Completed on 2022-10-26 01:07:04
+-- Completed on 2022-10-27 02:01:49
 
 --
 -- PostgreSQL database dump complete

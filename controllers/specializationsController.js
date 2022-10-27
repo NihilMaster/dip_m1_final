@@ -16,6 +16,21 @@ module.exports = {
         .then((specialization) => res.status(201).send(specialization))
         .catch((error) => res.status(400).send(error));
     },
+    getById(req, res) {
+        console.log(req.params.id);
+        return specialization
+        .findByPk(req.params.id)
+        .then((specialization) => {
+            console.log(specialization);
+            if (!specialization) {
+                return res.status(404).send({
+                message: 'Specialization Not Found',
+                });
+            }
+            return res.status(200).send(specialization);
+        })
+        .catch((error) => res.status(400).send(error));
+    },
     update(req, res) {
         return specialization
         .findByPk(req.params.id)
