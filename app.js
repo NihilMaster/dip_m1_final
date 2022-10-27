@@ -19,6 +19,11 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Headers', '*');
+  next();
+}); 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -33,7 +38,7 @@ app.use('/', indexRouter);
 app.use('/appointment', appointmentsRouter);
 app.use('/doctor', doctorsRouter);
 app.use('/patient', patientsRouter);
-app.use('/illiness', illnessesRouter);
+app.use('/illness', illnessesRouter);
 app.use('/specialization', specializationsRouter);
 
 // catch 404 and forward to error handler

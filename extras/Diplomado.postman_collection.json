@@ -250,7 +250,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id_patient\": 1,\r\n    \"name_patient\": \"Pedro\",\r\n    \"illness\": \"Ceguera\",\r\n    \"state\": true\r\n}",
+									"raw": "{\r\n    \"name_patient\": \"Mateo3\",\r\n    \"illness\": 1,\r\n    \"state\": true,\r\n    \"biological_sex\": \"M\",\r\n    \"birthday\": \"1920/02/02\",\r\n    \"identification\": \"237498743\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -342,7 +342,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name_patient\": \"Jose\",\r\n    \"illness\": \"Ceguera\",\r\n    \"state\": true\r\n}",
+									"raw": "{\r\n    \"name_patient\": \"Juan Garcés\",\r\n    \"illness\": 1,\r\n    \"state\": true,\r\n    \"biological_sex\": \"M\",\r\n    \"birthday\": null,\r\n    \"identification\": \"123456\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -350,7 +350,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/patient/4",
+									"raw": "http://localhost:3000/patient/9",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -358,7 +358,7 @@
 									"port": "3000",
 									"path": [
 										"patient",
-										"4"
+										"9"
 									]
 								}
 							},
