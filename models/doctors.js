@@ -42,6 +42,16 @@ module.exports = sequelize => {
       primaryKey: false,
       field: "state",
       autoIncrement: false
+    },
+    identification: {
+      type: DataTypes.CHAR,
+      allowNull: true,
+      defaultValue: null,
+      comment: null,
+      primaryKey: false,
+      field: "identification",
+      autoIncrement: false,
+      unique: "doctors_un"
     }
   };
   const options = {

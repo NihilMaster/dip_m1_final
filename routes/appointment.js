@@ -7,5 +7,6 @@ router.get('/list/:id', appointmentsController.getById);
 router.post('/', appointmentsController.add);
 router.put('/:id', appointmentsController.update);
 router.delete('/:id', appointmentsController.delete);
+router.get('/listJ', appointmentsController.listJoin);
 
 module.exports = router;

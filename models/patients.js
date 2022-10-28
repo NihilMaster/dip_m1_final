@@ -68,7 +68,8 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: false,
       field: "identification",
-      autoIncrement: false
+      autoIncrement: false,
+      unique: "patients_un"
     }
   };
   const options = {
