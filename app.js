@@ -22,7 +22,12 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', '*');
   next();
-}); 
+});
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Methods', '*');
+  next();
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
