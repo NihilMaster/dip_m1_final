@@ -46,7 +46,7 @@ module.exports = {
             .update({
                 name_doctor: req.body.name_doctor || doctor.name_doctor,
                 specialization: req.body.specialization || doctor.specialization,
-                state: req.body.state || doctor.state
+                state: req.body.state
             })
             .then(() => res.status(200).send(doctor))
             .catch((error) => res.status(400).send(error));

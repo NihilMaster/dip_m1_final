@@ -49,7 +49,7 @@ module.exports = {
             .update({
                 name_patient: req.body.name_patient || patient.name_patient,
                 illness: req.body.illness || patient.illness,
-                state: req.body.state || patient.state,
+                state: req.body.state,
                 biological_sex: req.body.biological_sex || patient.biological_sex,
                 birthday: req.body.birthday,
                 identification: req.body.identification
