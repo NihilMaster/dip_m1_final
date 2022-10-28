@@ -1,13 +1,11 @@
-const { appointment } = require('../models').appointments_model;
+const appointment = require('../models').appointments_model;
 const db = require('../models');
+
 module.exports = {
     list(req, res) {
-        return appointment
-        .findAll({})
+        return appointment.findAll({})
         .then((appointment) => res.status(200).send(appointment))
-        .catch((error) => {
-            res.status(400).send(error);
-        });
+        .catch((error) => { res.status(400).send(error); });
     },
     getById(req, res) {
         console.log(req.params.id);
@@ -73,7 +71,6 @@ module.exports = {
         .catch((error) => res.status(400).send(error));
     },  
     listJoin(req, res) {
-
         return db.sequelize.query(
             "select "+
             "a.id_appointment, "+
@@ -86,13 +83,12 @@ module.exports = {
             "left join patients p on p.id_patient = a.patient "+
             "left join doctors d on d.id_doctor = a.doctor "+
             "left join illnesses i on i.id_illness = p.illness "+ 
-            "left join specializations s on s.id_specialization = d.specialization"
-        )
+            "left join specializations s on s.id_specialization = d.specialization")
             .then((result) => {
                 console.log(result);
                 if (!result) {
                     return res.status(404).send({
-                        message: 'result Nxt Found',
+                        message: 'Appointment Nxt Found',
                     });
                 }
                 return res.status(200).send(result[0]);
